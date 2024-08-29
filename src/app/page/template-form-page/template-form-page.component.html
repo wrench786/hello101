@@ -1,0 +1,16 @@
+<div class="template-form-section">
+    <h2>Template Form Page</h2>
+
+    <form #userForm="ngForm" (ngSubmit)="saveUser(userForm)">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" name="name" ngModel required>
+    
+        <label for="email">Enter Your Email:</label>
+        <input type="email" name="email" ngModel>
+    
+        <label for="age">Enter Your Age:</label>
+        <input type="number" name="age" ngModel>
+    
+        <button type="submit" class="button" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</div>
