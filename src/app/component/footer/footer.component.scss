@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+
+.footer{
+    background-color: $primary;
+    color: $white;
+
+    text-align: center;
+    height: 50px;
+    padding: 15px 40px;
+    p{
+        font-size: 20px;
+    }
+}
