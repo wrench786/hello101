@@ -1,0 +1,40 @@
+<div class="template-form-section">
+    <h2>Reactive Form Page</h2>
+
+    <form [formGroup]="userDataForm" (ngSubmit)="saveUser()">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" name="name" formControlName="name">
+        <div *ngIf=
+        "userDataForm.get('name')?.invalid && userDataForm.get('name')?.touched" 
+        >
+            <p *ngIf="userDataForm.get('name')?.hasError('required')" class="error">
+                Name is required
+            </p>
+            <p *ngIf="userDataForm.get('name')?.hasError('minlength')" class="error">
+                Name should be 3 char long
+            </p>
+            <p *ngIf="userDataForm.get('name')?.hasError('maxlength')" class="error">
+                char max lenght is 30
+            </p>
+        </div>
+    
+        <label for="email">Enter Your Email:</label>
+        <input type="email" name="email" formControlName="email">
+    
+        <label for="password">Enter Your Password:</label>
+        <input type="text" name="password" formControlName="password">
+        <div *ngIf=
+        "userDataForm.get('password')?.invalid && userDataForm.get('password')?.touched" 
+        >
+            <p *ngIf="userDataForm.get('password')?.hasError('required')" class="error">
+                Password is required
+            </p>
+            <p *ngIf="userDataForm.get('password')?.hasError('pattern')" class="error">
+                Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character.
+            </p>
+        </div>
+    
+        <!-- <button type="submit" class="button" [disabled]="userDataForm.invalid">Submit</button> -->
+        <button type="submit" class="button">Submit</button>
+    </form>
+</div>

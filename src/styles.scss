@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+$white: #ffffff;
+$black: #252525;
+$primary: #1f2833;
+$accent: #fc5c7d;
+$dark-grey: #cecece;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    max-width: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.button{
+    padding: 6px 16px;
+    background-color: $primary;
+    color: $white;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $accent;
+        color: $black;
+        cursor: pointer;
+    }
+    &:disabled{
+        background-color: $dark-grey;
+        color: $white;
+        cursor: not-allowed;
+    }
+}
